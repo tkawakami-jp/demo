@@ -43,3 +43,7 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'pry-rails'
+gem 'pry-doc'
+gem 'pry-byebug'
+gem 'carrierwave'
