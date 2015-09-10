@@ -1,0 +1,44 @@
+<p><button class="rec">REC</button> <button class="shot">SCREEN SHOT</button></p>
+<p><video class="video" width="200" height="150"></video> <canvas class="canvas" width="200" height="150"></canvas></p>
+
+<script>
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+window.URL = window.URL || window.webkitURL;
+
+var stream;
+var recControl = function(){
+    if(!stream){
+        el.rec.textContent = 'STOP';
+        navigator.getUserMedia(
+            {
+                video: true,
+                audio: false
+            },
+            function(s){
+                stream = s;
+                el.video.src =　URL.createObjectURL(stream);
+                el.video.play();
+            },
+            function(err){
+                console.log(err.name ? err.name : err);
+            }
+        );
+    }
+    else{
+        el.rec.textContent = 'REC';
+        stream.stop();
+        stream = undefined;
+    }
+}
+var shotControl = function(){
+    el.canvas.getContext("2d").drawImage(el.video, 0, 0, 200, 150);
+}
+var el = {
+    rec :    document.querySelector('.rec'),
+    video :  document.querySelector('.video'),
+    shot :   document.querySelector('.shot'),
+    canvas : document.querySelector('.canvas')
+}
+el.rec.addEventListener('click', recControl, false);
+el.shot.addEventListener('click', shotControl, false);
+</script>
