@@ -1,4 +1,4 @@
 class Image < ActiveRecord::Base
   mount_uploader :attachment, AttachmentUploader
-  validates :name, :attachment, presence: true
+  validates :attachment, presence: true
 end
