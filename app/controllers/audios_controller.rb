@@ -9,7 +9,6 @@ class AudiosController < ApplicationController
 
   def create
     @audio = Audio.new(audio_params)
-
     if @audio.save
       redirect_to audios_path, notice: "The Audio has been uploaded."
     else
