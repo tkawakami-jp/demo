@@ -2,11 +2,29 @@
   <div class="alert alert-info">
   <%= flash[:notice] %>
   </div>
+  <br>
 <% end %>
-<br />
-<%= link_to "New image", new_image_path, class: "btn btn-primary" %>
-<br />
-<br />
+
+<% if !@image.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @image.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="well">
+  <%= form_for @image do |f| %>
+    <%= f.hidden_field :image, :value => '' %>
+    <%= f.file_field :attachment %><br>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<br>
+<br>
 <% @images.each do |image| %>
   <%= link_to image_tag(image.attachment_url) , image.attachment_url %>
   <%= button_to "Delete", image, method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"} %>

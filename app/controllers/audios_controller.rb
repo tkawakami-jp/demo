@@ -1,9 +1,7 @@
 class AudiosController < ApplicationController
+  
   def index
-    @audios = Audio.all
-  end
-
-  def new
+    @audios = Audio.all.order(created_at: :desc)
     @audio = Audio.new
   end
 

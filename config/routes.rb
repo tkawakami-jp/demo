@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get 'rec_audio' => 'audio#show'
   
   resources :images, only: [:index, :new, :create, :destroy]
-  resources :audios, only: [:index, :new, :create, :destroy]
+  resources :audios, only: [:index, :create, :destroy]
 end
