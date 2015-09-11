@@ -13,3 +13,92 @@
  *= require_tree .
  *= require_self
  */
+
+/*------------------------------------------------------------------------------
+html5doctor.com Reset v1.6.1 - http://cssreset.com
+------------------------------------------------------------------------------*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
+/*------------------------------------------------------------------------------
+base
+------------------------------------------------------------------------------*/
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック", "MS PGothic",sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background: #fff;
+  word-break: break-all;/*半角英数字折り返す*/
+}
+a {
+  color: #06c;
+  text-decoration: none;
+  outline:none;/*点線ハック*/
+  -webkit-tap-highlight-color: rgba(0,0,0,0);/*タップカラー*/
+}
+a:hover {
+  color: #06c;
+  text-decoration: underline;
+}
+a.disable {
+  cursor: default;
+}
+li {
+  list-style: none;
+}
+hr {
+  margin: 0;
+  border: 0;
+  height: 1px;
+  background: #000;
+}
+img {
+  display: block;/*隙間ハック*/
+}
+.img_responsive {
+  max-width: 100%;
+  height: auto;
+  width /***/:auto;/*IE8用*/
+  display: block;
+}
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.text_hide {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.text_overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*------------------------------------------------------------------------------
+navi
+------------------------------------------------------------------------------*/
+nav {
+  padding: 5px;
+  background: #000;
+}
+nav ul li {
+  padding: 0 5px;
+  float: left;
+  border-right: 1px solid #fff;
+}
+nav ul li:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+nav ul li a,
+nav ul li a:hover{
+  color: #fff;
+}
+#wrapper {
+  padding: 5px 10px;
+}

@@ -1,7 +1,7 @@
-<% if !@image.errors.empty? %>
+<% if !@audio.errors.empty? %>
   <div class="alert alert-error">
     <ul>
-      <% @image.errors.full_messages.each do |msg| %>
+      <% @audio.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
@@ -9,8 +9,8 @@
 <% end %>
 
 <div class="well">
-  <%= form_for @image do |f| %>
-    <%= f.hidden_field :image, :value => '' %>
+  <%= form_for @audio do |f| %>
+    <%= f.hidden_field :audio, :value => '' %>
     <%= f.file_field :attachment %>
     <%= f.submit "Save", class: "btn btn-primary" %>
   <% end %>

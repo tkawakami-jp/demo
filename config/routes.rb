@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   
   root 'home#top'
-  get 'video' => 'video#show'
-  get 'audio' => 'audio#show'
+  get 'rec_video' => 'video#show'
+  get 'rec_audio' => 'audio#show'
   
   resources :images, only: [:index, :new, :create, :destroy]
+  resources :audios, only: [:index, :new, :create, :destroy]
 end

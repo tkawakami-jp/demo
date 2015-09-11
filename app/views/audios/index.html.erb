@@ -1,0 +1,19 @@
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
+<br />
+<%= link_to "New audios", new_audio_path, class: "btn btn-primary" %>
+<br />
+<br />
+<table class="table table-bordered table-striped">
+  <tbody>
+    <% @audios.each do |audio| %>
+      <tr>
+        <td><%= link_to "PLay", audio.attachment_url %></td>
+        <td><%= button_to "Delete", audio, method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
